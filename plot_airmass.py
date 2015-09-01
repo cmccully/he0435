@@ -63,14 +63,15 @@ def plot():
         pyplot.plot(mjds[where_site] - 57000, airmasses[where_site],
                     'o', color=colors[site])
     pyplot.xlim(7.7, 10.3)
+    pyplot.ylim(2.35, 0.95)
     pyplot.xlabel('MJD - 57000')
     pyplot.ylabel('Airmass')
     a = pyplot.annotate("", xy=(8.75, 1.2),  xycoords='data',xytext=(8.30, 1.2), textcoords='data',
     arrowprops={'arrowstyle':"<->"})
     a.arrow_patch.set_linewidth(2)
-    pyplot.text(8.525, 1.23,'Bad Weather', ha='center', fontsize='medium')
+    pyplot.text(8.525, 1.17,'Bad Weather', ha='center', fontsize='medium')
 
-    pyplot.legend(labels=['Chile', 'South Africa', 'Australia'], loc=2)
+    pyplot.legend(labels=['Chile', 'South Africa', 'Australia'], loc=3)
     pyplot.savefig('he0435_airmass.pdf', bbox_inches='tight', pad_inches=0.05)
     pyplot.show()
     pyplot.rcdefaults()
